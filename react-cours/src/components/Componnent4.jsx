@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../App";
 
 export default function Componnent4() {
-  return <div>Componnent4</div>;
+  const user = useContext(UserContext);
+
+  return <div>{user}</div>;
 }

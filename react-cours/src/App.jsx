@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Component1 from "./components/Component1";
 
-function App() {
-  const [count, setCount] = useState(0);
+export const UserContext = createContext();
 
-  return <Component1 />;
+function App() {
+  const [user, setUser] = useState("mon context");
+
+  return (
+    <UserContext.Provider value={user}>
+      <Component1 />;
+    </UserContext.Provider>
+  );
 }
 
 export default App;
